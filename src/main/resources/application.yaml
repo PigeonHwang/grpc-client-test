@@ -1,0 +1,11 @@
+server:
+  port: 3001
+  error:
+    include-stacktrace: on_param
+grpc:
+  client:
+    projectf-kotlin:
+      address: 'static://0.0.0.0:9091'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext

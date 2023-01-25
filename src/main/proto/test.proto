@@ -1,0 +1,29 @@
+syntax = "proto3";
+package com.example.grpcclienttest.model.protobuf;
+
+option java_multiple_files = true;
+
+message Message {
+  string msgType = 1;
+  oneof data_oneof {
+    string data = 2;
+    User user = 3;
+  }
+}
+
+message User {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Req {
+  string message = 1;
+}
+
+message Res {
+  string message = 1;
+}
+
+service MyService {
+  rpc PingPong(Req) returns(Res) {};
+}
